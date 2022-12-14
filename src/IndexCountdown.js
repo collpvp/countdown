@@ -25,42 +25,71 @@ export default function IndexCountdown() {
     import('bootstrap/dist/js/bootstrap');
   }, []);
   return (
-    <main className="container pt-5">
-      <label htmlFor="cd-url" className="form-label">
-        Type your Username in the box below.
-      </label>
-      <div className="input-group mb-3">
-        <span className="input-group-text" id="countdown-url">
-          http://localhost:3000/countdown/
-        </span>
-        <input
-          type="text"
-          className="form-control"
-          id="cd-url"
-          aria-describedby="countdown-url"
-          value={userName}
-          onChange={handleChange}
-        ></input>
-        <button
-          className="btn btn-outline-secondary"
-          type="button"
-          id="button-copy"
-          text={userName}
-          onClick={() => {
-            navigator.clipboard.writeText(
-              'http://localhost:3000/countdown/' + userName
-            );
-          }}
-        >
-          Copy URL
-        </button>
+    <main className="container pt-5 margin-mid">
+      <div className="text-center my-5">
+        <h3>Countdown for your Stream!</h3>
+        <div className="pt-2 mx-5">
+          <div>
+            You always wanted a simple countdown for your Stream overlay?
+          </div>
+          <div>
+            Without downloading a Software which needs to be open all the time?
+          </div>
+          <h4 className="mt-2">Here is your perfect solution! </h4>
+          <div>
+            Type your Twitch Username in the box below and paste the URL in your
+            OBS Browser Source.
+          </div>
+          <div>
+            After that you should be able to see the timer in your stream
+            overlay.
+          </div>
+          <div>
+            Read the commands and their options to use this countdown
+            efficiently.
+          </div>
+          <div>
+            The commands need to be used in your own Chat. Simple right?
+          </div>
+        </div>
       </div>
-      <div className="accordion" id="accordiondeample">
-        {Accordion('commandOne', 'startCommand', '!cd start', startText)}
-        {Accordion('commandTwo', 'stopCommand', '!cd stop', stopText)}
-        {Accordion('commandThre', 'addCommand', '!cd add', addText)}
-        {Accordion('commandFour', 'resetCommand', '!cd reset', resetText)}
-        {Accordion('commandFive', 'colorCommand', '!cd color', colorText)}
+      <div className="margin-mid">
+        <label htmlFor="cd-url" className="form-label">
+          Twitch Username:
+        </label>
+        <div className="input-group mb-3">
+          <span className="input-group-text" id="countdown-url">
+            http://localhost:3000/countdown/
+          </span>
+          <input
+            type="text"
+            className="form-control"
+            id="cd-url"
+            aria-describedby="countdown-url"
+            value={userName}
+            onChange={handleChange}
+          ></input>
+          <button
+            className="btn btn-secondary"
+            type="button"
+            id="button-copy"
+            text={userName}
+            onClick={() => {
+              navigator.clipboard.writeText(
+                'http://localhost:3000/countdown/' + userName
+              );
+            }}
+          >
+            Copy URL
+          </button>
+        </div>
+        <div className="accordion" id="accordiondeample">
+          {Accordion('commandOne', 'startCommand', '!cd start', startText)}
+          {Accordion('commandTwo', 'stopCommand', '!cd stop', stopText)}
+          {Accordion('commandThre', 'addCommand', '!cd add', addText)}
+          {Accordion('commandFour', 'resetCommand', '!cd reset', resetText)}
+          {Accordion('commandFive', 'colorCommand', '!cd color', colorText)}
+        </div>
       </div>
     </main>
   );

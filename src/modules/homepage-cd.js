@@ -3,7 +3,7 @@ const accordion = (headId, target, command, text) => {
     <div className="accordion-item">
       <h2 className="accordion-header" id={headId}>
         <button
-          className="accordion-button"
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={'#' + target}
