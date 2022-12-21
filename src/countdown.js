@@ -126,7 +126,6 @@ export default function Countdown() {
 
       //TODO: implement followtime into showTimer and add track new unique follower // Doesnt work with the tmi js lib. Same with custom channel point rewards
       //TODO: if follow on play animation activated
-      //TODO: add auf maximum setzen und nicht reset
     }
   }
 
@@ -193,7 +192,7 @@ export default function Countdown() {
       console.log(total);
       if (total <= 100) {
         reset();
-        //TODO: play a sound file or something
+        //TODO: play a sound file
       } else {
         let seconds = Math.floor((total / 1000) % 60);
         let minutes = Math.floor((total / 1000 / 60) % 60);

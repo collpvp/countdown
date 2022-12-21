@@ -10,8 +10,7 @@ const stopText =
   '<div><code>!cd stop</code> Stops the countdown. It can be continued by using the start command.</div>';
 const addText =
   '<div><code>!cd add 5</code> Adds the amount given to the countdown. Can also be used as a stopped start command.</div>';
-const resetText =
-  '<div><code>!cd reset</code> Resets the countdown. Can be restarted by using the start command.</div>';
+const resetText = '<div><code>!cd reset</code> Resets the countdown.</div>';
 const colorText =
   '<div><code>!cd color</code> Changes the color of the displayed numbers.</div><div>Current options are <code>white, black, blue, red, green</code>.</div>';
 
@@ -26,16 +25,10 @@ export default function IndexCountdown() {
   }, []);
   return (
     <main className="container pt-5 margin-mid">
-      <div className="text-center my-5">
+      <div className="my-5 text-center">
         <h3>Countdown for your Stream!</h3>
-        <div className="pt-2 mx-5">
-          <div>
-            You always wanted a simple countdown for your Stream overlay?
-          </div>
-          <div>
-            Without downloading a Software which needs to be open all the time?
-          </div>
-          <h4 className="mt-2">Here is your perfect solution! </h4>
+        <div className="pt-2">
+          <div>This stream countdown can currenlty only be used on Twitch.</div>
           <div>
             Type your Twitch Username in the box below and paste the URL in your
             OBS Browser Source.
@@ -49,7 +42,8 @@ export default function IndexCountdown() {
             efficiently.
           </div>
           <div>
-            The commands need to be used in your own Chat. Simple right?
+            The commands need to be used in your own Chat. No extra programms
+            needed.
           </div>
         </div>
       </div>
@@ -90,6 +84,11 @@ export default function IndexCountdown() {
           {Accordion('commandFour', 'resetCommand', '!cd reset', resetText)}
           {Accordion('commandFive', 'colorCommand', '!cd color', colorText)}
         </div>
+      </div>
+
+      <div className="my-5 text-center">
+        Want to report a bug or got a suggestion? Join the{' '}
+        <a href="#">support Discord Server</a>!
       </div>
     </main>
   );
